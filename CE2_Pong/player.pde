@@ -4,7 +4,7 @@ class Player {
   color paddleColour = color(250);
   int lives = STARTINGLIVES;
   int currentVel;
-  
+   
   Player(int screenY){
     xPos = SCREENX/2;
     yPos = screenY;

@@ -12,7 +12,7 @@ void setup(){
   fill(255, 0,0);
   frameRate(60);
 }
-
+ 
 void draw(){
   background(255);
   fill(xLocA, yLocA/2, (xLocA / (yLocB/2)));

@@ -10,7 +10,7 @@ void setup(){
   noStroke();
   fill(0, 0, 255);
 }
-
+ 
 void draw(){
   background(255);
   rect(xLocSqA++, yLocSqA, xSize, ySize);

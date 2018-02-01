@@ -9,3 +9,4 @@ final int STARTINGLIVES = 3;
 final int BALLMAXXVEL = 30;
 final int BALLMAXYVEL = 17;
 //final PFont gameOverFont = loadFont(“MicrosoftTaiLe-130.vlw”);
+ 

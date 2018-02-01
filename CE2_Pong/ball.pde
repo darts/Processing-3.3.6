@@ -5,7 +5,7 @@ class Ball{
  float dy;
  int radius;
  color ballColour = color(200, 100, 50);
- 
+  
  Ball(){
    reset();
    resetVel();

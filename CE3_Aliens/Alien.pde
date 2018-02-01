@@ -1,8 +1,8 @@
 class Alien {
   int xPos;
   int yPos;
-  PImage alienHead = loadImage("AlienHeadReallySmall.png");
-  PImage alienExplode = loadImage("1.gif");
+  PImage alienHead;
+  PImage alienExplode = loadImage("Explosion.png");
   boolean movingDown;
   int dx;
   int dy;
@@ -11,8 +11,18 @@ class Alien {
   float explosionT;
   boolean exploding;
   boolean exploded;
+  float sinState;
 
-  Alien(int x, int y) {
+  Alien(int x, int y, int img, float useSin) {
+    if(useSin > 1)
+      sinState = useSin;
+    else
+      sinState = 0;
+      
+    if(img == 0)
+      alienHead = loadImage("AlienHeadReallySmall.png");
+    else
+      alienHead = loadImage("OtherAlien.png");
     xPos = x;
     yPos = y;
     movingDown = false;
@@ -25,10 +35,11 @@ class Alien {
 
   void move() {
     // explodeTime--;
-    if (movingDown && distDown < IMGHEIGHT) {
+    if (movingDown && distDown < IMGHEIGHT + YMARGIN) {
       yPos += dy;
       distDown += dy;
     } else {
+      yPos += calcSinOffset(sinState, xPos);
       movingDown = false;
       distDown = 0;
       if (xPos > (SCREENX - IMGWIDTH) || xPos < 0) {
@@ -64,4 +75,10 @@ class Alien {
     }
     }
   }
+  
+  int calcSinOffset(float sinState, int xPos){
+   return (int)((sinState * 4) * sin((xPos / 10) + (sinState * 3)));
+  }
+  
+  
 }
