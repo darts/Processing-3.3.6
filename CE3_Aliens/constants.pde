@@ -6,3 +6,5 @@ final int STARTINGY = 70;
 final int EXPLOSIONINCREMENT = 45;
 final int MARGIN = 45;
 final int YMARGIN = 120;
+final int RETURNRANGE = 100;
+final int RETURNSPEED = 2;
