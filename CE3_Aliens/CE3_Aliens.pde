@@ -1,7 +1,7 @@
 Alien alienStream[];
 
 void settings() {
-  size(SCREENX, SCREENY);
+  size(SCREEN_X, SCREEN_Y);
 }
 
 void setup() {
@@ -16,7 +16,7 @@ void draw() {
 }
 void init_array(Alien theArray[]) {
   for (int i=0; i<theArray.length; i++)
-    theArray[i] = new Alien((i * (IMGWIDTH + MARGIN)), STARTINGY, (int)random(0,2), random(0,3));
+    theArray[i] = new Alien((i * (IMG_WIDTH + MARGIN)), STARTING_Y, (int)random(0,2), random(0,3));
 }    
 void draw_array(Alien theArray[]) {
   for (int i=0; i<theArray.length; i++)

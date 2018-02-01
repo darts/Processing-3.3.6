@@ -37,22 +37,22 @@ class Alien {
 
   void move() {
     // explodeTime--;
-    if (movingDown && distDown <= IMGHEIGHT + YMARGIN) {
+    if (movingDown && distDown <= IMG_HEIGHT + Y_MARGIN) {
       yPos += dy;
       distDown += dy;
-      if (distDown == IMGHEIGHT + YMARGIN)
-        defaultLvl += IMGHEIGHT + YMARGIN;
+      if (distDown == IMG_HEIGHT + Y_MARGIN)
+        defaultLvl += IMG_HEIGHT + Y_MARGIN;
     } else {
-      if (xPos <= SCREENX - RETURNRANGE && xPos >= RETURNRANGE) {
+      if (xPos <= SCREEN_X - RETURN_RANGE && xPos >= RETURN_RANGE) {
         yPos += calcSinOffset(sinState, xPos);
       } else {
-        for (int i = 0; i < RETURNSPEED; i++) {
+        for (int i = 0; i < RETURN_SPEED; i++) {
           returnToDefaultY();
         }
       }
       movingDown = false;
       distDown = 0;
-      if (xPos > (SCREENX - IMGWIDTH) || xPos < 0) {
+      if (xPos > (SCREEN_X - IMG_WIDTH) || xPos < 0) {
         dx = -dx;
         movingDown = true;
       }
@@ -76,10 +76,10 @@ class Alien {
   void explode() {
     if (exploded) {
     } else {
-      if (explosionT - EXPLOSIONINCREMENT <= 0) {
+      if (explosionT - EXPLOSION_INCREMENT <= 0) {
         exploded = true;
       } else {
-        explosionT -= EXPLOSIONINCREMENT;
+        explosionT -= EXPLOSION_INCREMENT;
         alienExplode.resize(0, (int)explosionT);
         image(alienExplode, xPos, yPos);
       }
