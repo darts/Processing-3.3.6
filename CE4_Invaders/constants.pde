@@ -8,3 +8,7 @@ final int MARGIN = 60;
 final int Y_MARGIN = 120;
 final int RETURN_RANGE = 150;
 final int RETURN_SPEED = 3;
+final int PLAYER_X = 150;
+final int PLAYER_Y = 124;
+final int BULLET_X = 10;
+final int BULLET_Y = 20;
