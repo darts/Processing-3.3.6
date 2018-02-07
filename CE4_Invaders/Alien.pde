@@ -36,7 +36,6 @@ class Alien {
   }
 
   void move() {
-    // explodeTime--;
     if (movingDown && distDown <= IMG_HEIGHT + Y_MARGIN) {
       yPos += dy;
       distDown += dy;
@@ -65,11 +64,9 @@ class Alien {
       image(alienHead, xPos, yPos);
     } else if (!exploded) {
       if (!exploding) {
-        //explodeTime = 120;
         exploding = true;
       }
       explode();
-      //image(alienExplode, xPos, yPos);
     }
   }
 
