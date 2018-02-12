@@ -29,6 +29,7 @@ class Alien {
     explosionT = 120;
   }
 
+  //Moves the alien in whichever axis neccessary.
   void move() {
     if (movingDown && distDown <= IMG_HEIGHT + Y_MARGIN) {
       yPos += dy;
@@ -66,5 +67,13 @@ class Alien {
   //Literally changes a variable.
   void explode() {
     exploding = true;
+  }
+  
+  int getX() {
+    return xPos;
+  }
+
+  int getY() {
+    return yPos;
   }
 }

@@ -5,6 +5,7 @@ class BulletStream { //<>//
   boolean doubleBullets;
   int bulletVel;
   boolean isSine;
+  
   BulletStream() {
     isSine = false;
     bulletLim = BULLET_LIMIT;
@@ -14,19 +15,22 @@ class BulletStream { //<>//
     bulletVel = DEF_BULLET_SPEED;
   }
   
-  
+  //Moves the array of bullets.
   void moveBullets() {
     for (int index = 0; index < bulletStream.size(); index++) {
       bulletStream.get(index).move();
     }
   }
 
+  //Draws the array of bullets.
   void drawBullets() { 
     for (int index = 0; index < bulletStream.size(); index++) {
       bulletStream.get(index).draw();
     }
   }
-
+  
+  //Adds a bullet if the number of bullets is below the limit.
+  //Changes the type of bullet based on the current powerUp (if any).
   void addBullet(int xPos) {
     if (!doubleBullets) {
       if (bulletStream.size() < bulletLim)
@@ -39,6 +43,7 @@ class BulletStream { //<>//
     }
   }
 
+  //Checks if any bullet has hit an alien.
   boolean hitAlien(Alien alien) {
     for (int index = 0; index < bulletStream.size(); index++) {
       if (bulletStream.get(index).collide(alien))
@@ -47,6 +52,7 @@ class BulletStream { //<>//
     return false;
   }
 
+  //Deletes bullets that have gone off the screen
   void delOutSide() {
     for (int index = 0; index < bulletStream.size(); index++) {
       if (bulletStream.get(index).isOutOfRange())
@@ -54,6 +60,7 @@ class BulletStream { //<>//
     }
   }
 
+  //Applies powerUps based on randomly selected variable every time it is called (when an alien is hit)
   void powerUp() {
     int power = (int)random(0, POWERUP_RARITY);
     //Double bullets.

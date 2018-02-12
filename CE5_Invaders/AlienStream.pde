@@ -5,7 +5,8 @@ class AlienStream {
     alienStream = new ArrayList<Alien>();
   }
 
-  //Generates aliens in a snake pattern so they appear to have been generated in a single stream.
+  //Generates aliens in a snake pattern so they appear to have been generated in a single stream (sorta snake-like). 
+  //Generates as many aliens as has been defined in the constants.
   void initStream(int numOfAliens) {
     int alienVel = ALIEN_START_VEL;
     int yStart = STARTING_Y;
@@ -25,8 +26,8 @@ class AlienStream {
       alienStream.get(index).draw();
   }
 
-  //Moves the array of aliens and deletes ones that have been hit.
-  //Checks for hits too.
+  //Checks if the aliens have been hit. Any hit alien is made to explode and a powerUp is 'dropped'.
+  //If the alien has not been hit, it is moved.
   void moveAliens(BulletStream bulletStream) {
     for (int index = 0; index < alienStream.size(); index++) {
       currentAlien = alienStream.get(index);
