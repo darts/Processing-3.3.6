@@ -1,5 +1,4 @@
 import processing.sound.*;
-AudioDevice myAudioServer;
 
 Player thePlayer;
 AlienStream alienStream;
